@@ -1,0 +1,23 @@
+<div class="container">
+
+    <div class="row">
+
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" ng-class="$ctrl.isDisplayMode($ctrl.MODES.LETTERS)?'active':''" ng-click="$ctrl.setDisplayMode($ctrl.MODES.LETTERS)"><a href="#">Letters</a></li>
+            <li role="presentation" ng-class="$ctrl.isDisplayMode($ctrl.MODES.CONTACTS)?'active':''" ng-click="$ctrl.setDisplayMode($ctrl.MODES.CONTACTS)"><a href="#">Contacts</a></li>
+        </ul>
+
+    </div>
+
+
+    <div class="row" ng-if="$ctrl.isDisplayMode($ctrl.MODES.LETTERS)" >
+        <letter-list letters-number="$ctrl.LETTERS_NUMBER"></letter-list>
+    </div>
+
+    <div ng-if="$ctrl.isDisplayMode($ctrl.MODES.CONTACTS)" class="row">
+        <user-list mode="$ctrl.mode"></user-list>
+    </div>
+
+
+</div>
+
